@@ -1,6 +1,22 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 
+generateBtn.onclick = function() {
+
+  var characterNums = prompt("How many characters would you like to add?");
+    if (characterNums >= 8 && characterNums < 128) {
+      var randomLower = alert("Would you like to add lowercase letters to password?");
+      var randomUpper = alert("Would you like to add uppercase letters to password?");
+      var randomSymbol = alert("Would you like to include symbols in password?");
+    }
+
+   else {
+      prompt("Please select a number between 8 and 128.");
+    };
+
+
+}
+
 function getRandomLower(){
   return String.fromCharCode(Math.floor(Math.random() * 26) + 97);
 }
