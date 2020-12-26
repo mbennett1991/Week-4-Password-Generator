@@ -5,41 +5,42 @@ var lowercase = "abcdefghijklmnopqrstuvwxyz";
 var numbers = "1234567890";
 var symbols = "!@#$%^&*(){}[]=/,.|~?";
 
-// Write password to the #password input
-function writePassword(characterNums, confirmLower, confirmUpper, confirmSymbols, confirmNumbers) 
-{
-  var password = generatePassword();
-  var passwordText = document.querySelector("#password").innerHTML=generatePassword;
 
-  passwordText.value = password;
-  
-  var confirmLower, confirmUpper, confirmSymbols, confirmNumbers;
+// Write password to the #password input
+function writePassword() 
+  {
+  var symbolSet = "";
+  var generatePassword = "";
+  //var passwordText = document.querySelector("#password").innerHTML=generatePassword;
+
+  //passwordText.value = password;
 
   var characterNums = prompt("How many characters would you like to add?");
-  if (characterNums >= 8 && characterNums < 128) {
-    confirmLower = confirm("Would you like to add lowercase letters to password?");
-      if (confirmLower) characterNums = characterNums.concat(lowercase)
-    confirmUpper = confirm("Would you like to add uppercase letters to password?");
-      if (confirmUpper) characterNums = characterNums.concat(uppercase)
-    confirmSymbols = confirm("Would you like to include symbols in password?");
-      if (confirmSymbols) characterNums = characterNums.concat(symbols)
-    confirmNumbers = confirm("Would you like to add numbers to password?")
-      if (confirmNumbers) characterNums = characterNums.concat(numbers)
+  if (characterNums >= 8 && characterNums < 128)
+    //Adding values to our empty string
+    {
+      confirmLower = confirm("Include lowercase letters in password?");
+      if (confirmLower) symbolSet += lowercase;
+    confirmUpper = confirm("Include uppercase letters in password?");
+      if (confirmUpper) symbolSet += uppercase;
+    confirmSymbols = confirm("Include symbols in password?");
+      if (confirmSymbols) symbolSet += symbols; 
+    confirmNumbers = confirm("Include numbers in password?");
+      if (confirmNumbers) symbolSet += numbers;
+    }
+  
+  else 
+  {
+    alert("Please select a number between 8 and 128.");
   }
-
-  else {
-    prompt("Please select a number between 8 and 128.");
-
-
-  var generatePassword = " ";
+  
 
   for (i = 1; i <= characterNums; i++)
-    var pword = Math.floor(Math.random() * characterNums.length + 1)
+  {
+  generatePassword += symbolSet [Math.floor(Math.random() * symbolSet.length)]
+  };
 
-    generatePassword += characterNums.charAt(characterNums)
+  console.log(generatePassword)
   }
-  return generatePassword
-}
-
 // Add event listener to generate button
-generateBtn.addEventListener("click", writePassword);
+generateBtn.addEventListener("click", writePassword) ;
