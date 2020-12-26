@@ -11,9 +11,9 @@ function writePassword()
   {
   var symbolSet = "";
   var generatePassword = "";
-  //var passwordText = document.querySelector("#password").innerHTML=generatePassword;
+  document.querySelector("#password").innerHTML=generatePassword;
 
-  //passwordText.value = password;
+    //Getting character confirmations
 
   var characterNums = prompt("How many characters would you like to add?");
   if (characterNums >= 8 && characterNums < 128)
@@ -29,18 +29,25 @@ function writePassword()
       if (confirmNumbers) symbolSet += numbers;
     }
   
+    //When an incorrect selection has been made
+
   else 
   {
     alert("Please select a number between 8 and 128.");
   }
   
+    //For loop to randomly generate the password with/without confirmed selections
 
   for (i = 1; i <= characterNums; i++)
   {
   generatePassword += symbolSet [Math.floor(Math.random() * symbolSet.length)]
   };
 
+  //Logging to console to ensure it works
   console.log(generatePassword)
-  }
+
+//Pushing to webpage
+  document.querySelector("#password").innerHTML=generatePassword;
+}
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword) ;
