@@ -15,7 +15,7 @@ In this project, I have created a random password generator using JavaScript. Th
 ---
 <a name = "Installation"></a>
 ### Installation 
-<a href = "https://mbennett1991.github.io/Week-4-Password-Generator/Homework/">Click me</a> to generate your own password!
+<a href = "https://mbennett1991.github.io/Week-4-Password-Generator/">Click me</a> to generate your own password!
 
 ---
 <a name = "Usage"></a>
